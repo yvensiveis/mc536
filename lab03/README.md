@@ -23,7 +23,16 @@
 
 > Exemplo de modelo lógico relacional
 ~~~
-PESSOA(_Código_, Nome, Telefone)
-ARMÁRIO(_Código_, Tamanho, Ocupante)
-  Ocupante chave estrangeira -> PESSOA(Código)
+CARDAPIO(_Data_, Refeição, Porção)
+    Componentes Porção chave estrangeira -> COMP_PORÇÃO (ID Porção)
+CONSOME(_ID Aluno_, _Data_, ID Porção)
+    ID Porção chave estrangeira -> Porção (ID Porção)
+PORÇÃO (_ID Porção_, Vezes Rejeitado, Vezes consumido, Componentes Ingredientes)
+COMP_PORÇÃO (ID Porção, ID Ingrediente)
+    ID Porção chave estrangeira -> Porção (ID Porção)
+    ID Ingrediente chave estrangeira -> Ingrediente (ID Ingrediente)
+INGREDIENTE (ID Ingrediente, Proteína, Carboidrato, Lipídio)
+COMP_INGREDIENTE (ID Ingrediente Principal, ID Ingrediente Secundário)
+    ID Ingrediente Principal chave estrangeira -> Ingrediente (ID Ingrediente)
+    ID Ingrediente Secundário chave estrangeira -> Ingrediente (ID Ingrediente)
 ~~~
