@@ -1,20 +1,9 @@
-# Modelo para Apresentação do Lab02 - Modelagem Conceitual de Refeições em um Restaurante
+# Equipe Yvensíveis
 
-Estrutura de pastas:
-
-~~~
-├── README.md  <- arquivo apresentando a tarefa
-│
-└──images     <- arquivos de imagens usadas no documento
-
-~~~
-
-# Equipe `<nome da equipe>`
-
-# Subgrupo `<letra do subgrupo>`
-* `<nome completo>` - `<RA>`
-* `<nome completo>` - `<RA>`
-* `<nome completo>` - `<RA>`
+# Subgrupo A
+* Pedro César Mesquita Ferreira - 183998
+* Yvens Ian Prado Porto - 184031
+* Lucca Miranda Nunes - 230554
 
 ## Modelo Conceitual ER Revisado
 
