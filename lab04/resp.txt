@@ -1,0 +1,36 @@
+1.
+
+SELECT FOOD_CODE, FCID_CODE, INGREDIENT_NUM, COMMODITY_WEIGHT
+FROM Recipes
+WHERE FOOD_CODE = 27111300
+
+2.
+
+SELECT r.food_code, d.fcid_desc, r.fcid_code, r.ingredient_num, r.commodity_weight
+FROM Recipes R, FCID_Description D
+WHERE R.food_code = 27111300 AND D.fcid_code = r.fcid_code
+
+3.
+
+SELECT DISTINCT D.cgn , C.crop_group_description
+FROM Recipes R, FCID_Description D , Crop_Group C
+WHERE R.food_code = 27111300 AND D.fcid_code = r.fcid_code AND C.cgn = C.cgl AND C.cgn = D.cgn
+ORDER BY D.cgn
+
+4.
+
+SELECT D.fcid_desc, COUNT(D.fcid_code) cnt
+FROM FCID_Description D, Recipes R
+WHERE R.fcid_code = D.fcid_code
+GROUP BY R.fcid_code
+ORDER BY cnt DESC
+LIMIT 10
+
+5.
+
+SELECT C.cgn, C.crop_group_description, AVG(I.intake)
+FROM Crop_Group C, Intake I, FCID_Description F
+WHERE F.cgn = C.cgn AND I.fcid_code = F.fcid_code AND C.cgn = C.cgl
+GROUP BY C.cgn
+ORDER BY C.cgn
+LIMIT 10
